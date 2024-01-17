@@ -109,3 +109,5 @@
 29	48	1705487308663818971	CMakeFiles/push_swap.dir/src/utils/utils.c.o	7627a55227dbb953
 29	48	1705487308667819075	CMakeFiles/push_swap.dir/src/ft_push_swap.c.o	f1278d6a2c88d2c8
 48	76	1705487308691819695	push_swap	9a3cc05417d82fae
+1	31	1705487823897425333	CMakeFiles/push_swap.dir/src/commands/rev_rotate.c.o	4555d4fbc09a27ea
+31	58	1705487823933426298	push_swap	9a3cc05417d82fae

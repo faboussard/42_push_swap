@@ -26,8 +26,7 @@ void ft_move_one(enum sort_one command, t_node **one_stack);
 void ft_sort_both(enum sort_both command, t_node **first_stack, t_node **second_stack);
 
 //***utils
-t_node	*get_stack_bottom(t_node *stack);
-t_node	*get_stack_before_bottom(t_node *stack);
+t_node	*get_stack_before_bottom(t_node *stack); // la mettre dans la lib ft
 
 //***commands
 void swap_one(t_node **head);
