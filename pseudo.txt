@@ -22,3 +22,6 @@
 			//If so, implent radix with BIIIITS
 
 //Clean up the stack
+
+si on deifnit un point a null , la liste est coupee
+si on free cela ne va pas couper la liste, juste vider le contenu.

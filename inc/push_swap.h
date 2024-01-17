@@ -25,12 +25,16 @@ void    sort_3_int(t_node **a);
 void ft_move_one(enum sort_one command, t_node **one_stack);
 void ft_sort_both(enum sort_both command, t_node **first_stack, t_node **second_stack);
 
+//***utils
+t_node	*get_stack_bottom(t_node *stack);
+t_node	*get_stack_before_bottom(t_node *stack);
+
 //***commands
 void swap_one(t_node **head);
 void swap_both(t_node **first_stack_head, t_node **second_stack_head);
 void rotate_one(t_node **head);
 void rotate_both(t_node **first_stack_head, t_node **second_stack_head);
-void rev_rotate_one(t_node **head);
+void rev_rotate_one(t_node **list);
 
 //***utils
 //int check_exceed_int_limit(long argument);
