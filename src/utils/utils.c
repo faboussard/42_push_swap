@@ -20,18 +20,21 @@ void    del(void *content)
 void find_node_with_max_value(t_node *head)
 {
 	t_node *max_value_node;
+    t_node *max_prev_node = NULL;
 	t_node *current_node;
-	t_node *temp;
 
-	temp = head->next;
-	current_node = head;
-	max_value_node = head;
-	while (current_node != NULL)
+	current_node = head->next;
+    max_value_node = head;
+	while (current_node->next != NULL)
 	{
 		if (*(int*)current_node->content > *(int*)max_value_node->content)
-			max_value_node = current_node;
+        {
+            max_value_node = current_node->next;
+            max_prev_node = current_node;
+        }
 		current_node = current_node->next;
 	}
-	max_value_node->next=NULL;
+    if (max_prev_node != NULL)
+	    max_prev_node->next = max_value_node->next;
 	ft_lstadd_front(&head, max_value_node);
 }

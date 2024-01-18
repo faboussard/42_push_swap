@@ -57,7 +57,7 @@ int main()
 //        printf("%s", "not sorted");
 
 	sort_4_elements(a_stack);
-	    while (a_stack != NULL)
+    while (a_stack != NULL)
     {
         printf("test_astack\n");
         printf("%d\n", *(int*)a_stack->content);
