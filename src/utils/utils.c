@@ -17,12 +17,13 @@ void    del(void *content)
 		free(content);
 }
 
-t_node *find_node_with_max_value(t_node *head)
+void find_node_with_max_value(t_node *head)
 {
 	t_node *max_value_node;
 	t_node *current_node;
+	t_node *temp;
 
-	int size = ft_lstsize(head);
+	temp = head->next;
 	current_node = head;
 	max_value_node = head;
 	while (current_node != NULL)
@@ -31,12 +32,6 @@ t_node *find_node_with_max_value(t_node *head)
 			max_value_node = current_node;
 		current_node = current_node->next;
 	}
-	ft_lstadd_front(&head, max_value_node);
-	while (size)
-	{
-		max_value_node = max_value_node->next;
-		size--;
-	}
 	max_value_node->next=NULL;
-	return (max_value_node);
+	ft_lstadd_front(&head, max_value_node);
 }

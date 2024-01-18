@@ -11,8 +11,8 @@ int main()
 	b_stack = NULL;
 
 	const char *av[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
-    const char *av2[] = {"3", "9", "1"};
-	int ac = 3;
+    const char *av2[] = {"3", "9", "1", "0"};
+	int ac = 4;
 	//if (ac == 1 || (ac = 2 && !av[1][0]))
 	//	return (EXIT_FAILURE);
 	check_errors_and_init_stack(&a_stack, av2, ac);
@@ -56,7 +56,7 @@ int main()
 //    else
 //        printf("%s", "not sorted");
 
-	sort_3_elements(a_stack);
+	sort_4_elements(a_stack);
 	    while (a_stack != NULL)
     {
         printf("test_astack\n");

@@ -34,7 +34,7 @@ void sort_4_elements(t_node *one_stack);
 
 //***utils
 void    del(void *content);
-t_node *find_node_with_max_value(t_node *head);
+void find_node_with_max_value(t_node *head);
 int is_stack_sorted(t_node *one_stack);
 
 #endif //PUSH_SWAP_PUSH_SWAP_H
