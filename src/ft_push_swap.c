@@ -9,9 +9,9 @@ int main()
 	a_stack = NULL;
 	b_stack = NULL;
 
-	const char *av[] = {"7", "25", "8", "4"};
+	const char *av[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
     const char *av2[] = {"6", "26", "2", "6"};
-	int ac = 4;
+	int ac = 8;
 	//if (ac == 1 || (ac = 2 && !av[1][0]))
 	//	return (EXIT_FAILURE);
 	check_errors_and_init_stack(&a_stack, av, ac);
@@ -28,11 +28,22 @@ int main()
     //test pushshwap a
 
 	ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+
     while (b_stack != NULL)
     {
-        printf("test_onestack\n");
+        printf("bstack\n");
         printf("%d\n", *(int*)b_stack->content);
         b_stack = b_stack->next;
+    }
+
+    while (a_stack != NULL)
+    {
+        printf("test_astack\n");
+        printf("%d\n", *(int*)a_stack->content);
+        a_stack = a_stack->next;
     }
 
     //ft_print(command);

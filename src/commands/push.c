@@ -6,8 +6,8 @@ void push_head(t_node **src_stack_head, t_node **dest_stack_head)
 
     if (src_stack_head == NULL)
         return;
-    temp = *src_stack_head;
-    (*src_stack_head)->next=NULL;
+    temp = (*src_stack_head)->next;
+   (*src_stack_head)->next=NULL;
     ft_lstadd_front(dest_stack_head, *src_stack_head);
-    *src_stack_head = temp->next;
+    *src_stack_head = temp;
 }
