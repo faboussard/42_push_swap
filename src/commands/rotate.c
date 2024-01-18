@@ -14,7 +14,7 @@ void rotate_one(t_node **head)
 /*
 void rotate_both(t_node **first_stack_head, t_node **second_stack_head)
 {
-	rotate_both(first_stack_head);
-	rotate_both(second_stack_head);
+	rotate(first_stack_head);
+	rotate(second_stack_head);
 }
  */

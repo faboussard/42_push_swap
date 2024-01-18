@@ -30,11 +30,11 @@ int	error_duplicate(t_node *t_stack, int n)
 void	free_errors(t_node **a_stack)
 {
 	ft_lstclear(a_stack, del);
-	ft_printf("Error\n");
+	ft_printf("Input Error\n");
 	exit(EXIT_FAILURE);
 }
 
-void check_errors_and_init_stack(t_node **a_stack, const char **av, int ac)
+void check_errors_and_init_stack(t_node **one_stack, const char **av, int ac)
 {
     long n;
     int *n_int;
@@ -45,17 +45,20 @@ void check_errors_and_init_stack(t_node **a_stack, const char **av, int ac)
 	while (i < ac)
     {
 		n = ft_atol(av[i]);
-		if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
-			exit(1);
+		if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*one_stack, (int)n))
+            free_errors(one_stack);
         n_int = malloc(sizeof(int));
+        if (n_int == NULL)
+            return;
 		*n_int = (int)n;
 		new_node = ft_lstnew(n_int);
 		if (new_node == NULL)
 		{
 			ft_lstclear(&new_node, del);
 			del(n_int);
+            return;
 		}
-        ft_lstadd_back(a_stack, new_node);
+        ft_lstadd_back(one_stack, new_node);
         i++;
     }
 }

@@ -9,32 +9,30 @@ int main()
 	a_stack = NULL;
 	b_stack = NULL;
 
-	const char *av[] = {"5", "25", "3", "4"};
+	const char *av[] = {"7", "25", "8", "4"};
+    const char *av2[] = {"6", "26", "2", "6"};
 	int ac = 4;
 	//if (ac == 1 || (ac = 2 && !av[1][0]))
 	//	return (EXIT_FAILURE);
 	check_errors_and_init_stack(&a_stack, av, ac);
-/*
-	while (a_stack != NULL)
-	{
-		printf("test\n");
-		//printf("%d\n", *(int*)a_stack->content);
-		//a_stack = a_stack->next;
-		printf("%d\n", *(int*)a_stack->content);
-		a_stack = a_stack->next;
-	}
- */
-
-    //test pushshwap a
-
-	ft_move_one(REV_ROTATE_ONE, &a_stack);
+    /*
     while (a_stack != NULL)
     {
-        printf("test_onestack\n");
+        printf("test\n");
         //printf("%d\n", *(int*)a_stack->content);
         //a_stack = a_stack->next;
         printf("%d\n", *(int*)a_stack->content);
         a_stack = a_stack->next;
+    }
+     */
+    //test pushshwap a
+
+	ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+    while (b_stack != NULL)
+    {
+        printf("test_onestack\n");
+        printf("%d\n", *(int*)b_stack->content);
+        b_stack = b_stack->next;
     }
 
     //ft_print(command);
