@@ -27,10 +27,17 @@ int main()
      */
     //test pushshwap a
 
-	ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
-//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
-//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
-//    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+
+    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+    ft_move_both(PUSH_HEAD, &a_stack, &b_stack);
+
+
+    ft_move_both(REV_ROTATE_BOTH, &a_stack, &b_stack);
+    ft_move_both(REV_ROTATE_BOTH, &a_stack, &b_stack);
+  // ft_move_both(REV_ROTATE_BOTH, &a_stack, &b_stack);
+//    ft_move_both(ROTATE_BOTH, &a_stack, &b_stack);
 
     while (b_stack != NULL)
     {

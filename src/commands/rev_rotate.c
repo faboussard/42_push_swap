@@ -14,10 +14,8 @@ void	rev_rotate_one(t_node **head)
 	before_tail->next = NULL;
 }
 
-/*
 void rev_rotate_both(t_node **first_stack_head, t_node **second_stack_head)
 {
-	rev_rotate(first_stack_head);
-	rev_rotate(second_stack_head);
+    rev_rotate_one(first_stack_head);
+    rev_rotate_one(second_stack_head);
 }
- */

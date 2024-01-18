@@ -12,12 +12,12 @@ void ft_move_one(enum sort_one command, t_node **one_stack)
 
 void ft_move_both(enum sort_both command, t_node **first_stack, t_node **second_stack)
 {
-//    if (command == SWAP_BOTH)
-//        swap_both(first_stack, second_stack);
-//    if (command == ROTATE_BOTH)
-//        rotate_both(first_stack, second_stack);
-//    if (command == REV_ROTATE_BOTH)
-//        rev_rotate_both(first_stack, second_stack);
+    if (command == SWAP_BOTH)
+        swap_both(first_stack, second_stack);
+    if (command == ROTATE_BOTH)
+        rotate_both(first_stack, second_stack);
+    if (command == REV_ROTATE_BOTH)
+        rev_rotate_both(first_stack, second_stack);
     if (command == PUSH_HEAD)
         push_head(first_stack, second_stack);
 }
