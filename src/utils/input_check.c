@@ -3,15 +3,15 @@
 int	error_syntax(const char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
-		return (1);
+		return (OK);
 	if ((*str_n == '+' || *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
-		return (1);
+		return (OK);
 	while (*++str_n)
 	{
 		if (!(*str_n >= '0' && *str_n <= '9'))
-			return (1);
+			return (OK);
 	}
-	return (0);
+	return (NON_OK);
 }
 
 int	error_duplicate(t_node *t_stack, int n)

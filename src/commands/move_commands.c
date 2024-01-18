@@ -1,4 +1,4 @@
-#include "../../inc/push_swap.h"
+#include "push_swap.h"
 
 void ft_move_one(enum sort_one command, t_node **one_stack)
 {

@@ -2,13 +2,13 @@
 
 void rotate_one(t_node **head)
 {
-	void *temp;
+	void *is_first;
 
 	if (!head || !*head || !(*head)->next)
 		return;
-	temp = (*head)->content;
+    is_first = (*head)->content;
 	(*head) = ((*head)->next);
-	ft_lstadd_back(head, ft_lstnew(temp));
+	ft_lstadd_back(head, ft_lstnew(is_first));
 }
 
 

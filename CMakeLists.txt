@@ -61,6 +61,6 @@ add_executable(push_swap
         src/commands/rotate.c
         src/commands/swap.c
         src/utils/input_check.c
-        src/utils/sort.c
+        src/commands/move_commands.c
         src/utils/utils.c
-        src/ft_push_swap.c libft/src/ft_lst/ft_lstbeforelast.c)
+        src/ft_push_swap.c libft/src/ft_lst/ft_lstbeforelast.c src/utils/radix.c)
