@@ -19,6 +19,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+typedef struct s_node_int
+{
+	int				content;
+	int				index;
+	struct s_node_int	*next;
+	struct s_node_int	*prev;
+}	t_node_int;
+
 typedef struct s_node
 {
 	void			*content;
@@ -58,16 +66,16 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_node	*ft_lstnew(int *content);
-void	ft_lstadd_front(t_node **lst, t_node *new);
-int		ft_lstsize(t_node *lst);
-t_node	*ft_lstlast(t_node *lst);
-t_node	*ft_lstbeforelast(t_node *lst);
-void	ft_lstadd_back(t_node **node, t_node *new);
-void	ft_lstdelone(t_node *lst, void (*del)(void *));
-void	ft_lstclear(t_node **lst, void (*del)(void*));
-void	ft_lstiter(t_node *lst, void (*f)(void *));
-t_node	*ft_lstmap(t_node *lst, void *(*f)(void *), void (*del)(void *));
+t_node_int	*ft_lstnew(int content);
+void	ft_lstadd_front(t_node_int **lst, t_node_int *new);
+int	ft_lstsize(t_node_int *lst);
+t_node_int	*ft_lstlast(t_node_int *lst);
+t_node_int	*ft_lstbeforelast(t_node_int *lst);
+void	ft_lstadd_back(t_node_int **node, t_node_int *new);
+void	ft_lstdelone(t_node_int *lst, void (*del)(int));
+void	ft_lstclear(t_node_int **lst);
+void	ft_lstiter(t_node_int *lst, void (*f)(int));
+t_node_int	*ft_lstmap(t_node_int *lst, int (*f)(int), void (*del)(int));
 void	ft_putchar_fd(char c, int fd);
 char	**ft_split(char const *s, char c);
 int		ft_printf(const char *s, ...);

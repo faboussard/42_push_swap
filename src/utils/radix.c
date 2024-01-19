@@ -1,24 +1,22 @@
 #include "../../inc/push_swap.h"
 
-void sort_3_elements(t_node *one_stack)
+static int get_maxbits_lst(t_node_int *one_stack)
 {
-    if (*(int*)one_stack->content == 2)
-        rotate_one(&one_stack);
-    if (*(int*)one_stack->next->content == 3)
-            rev_rotate_one(&one_stack);
-    if (*(int*)one_stack->content > *(int*)one_stack->next->content)
-        swap_one(&one_stack);
-}
+	t_node_int *current;
+	int max;
+	int max_b;
 
-void sort_4_elements(t_node *one_stack)
-{
-	t_node *node_with_max_value;
-	t_node *another_stack;
+	current = one_stack;
+	max = current->index;
+	max_b = 0;
 
-
-	find_node_with_max_value(one_stack);
-	push_head(&node_with_max_value, &another_stack);
-	sort_3_elements(one_stack);
-	push_head(&another_stack, &one_stack);
-	//revrotate
+	while (current)
+	{
+		if (current->index > max)
+			max = current->index;
+		current = current->next;
+	}
+	while ((max >> max_b) != 0)
+		max_b++;
+	return (max_b);
 }

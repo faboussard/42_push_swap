@@ -14,9 +14,9 @@
 #include "../../inc/libft.h"
 #include  <stdio.h>
 
-t_node	*ft_lstnew(int *content)
+t_node_int	*ft_lstnew(int content)
 {
-	t_node	*new_element;
+	t_node_int	*new_element;
 
 	new_element = malloc(sizeof(t_node));
 	if (new_element == NULL)

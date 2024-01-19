@@ -1,8 +1,8 @@
 #include "../../inc/push_swap.h"
 
-void push_head(t_node **src_stack_head, t_node **dest_stack_head)
+void push_head(t_node_int **src_stack_head, t_node_int **dest_stack_head)
 {
-    t_node *temp;
+	t_node_int *temp;
 
     if (src_stack_head == NULL)
         return;

@@ -13,7 +13,7 @@
 #include "../../inc/libft.h"
 #include <stdlib.h>
 
-void	ft_lstdelone(t_node *lst, void (*del)(void *))
+void	ft_lstdelone(t_node_int *lst, void (*del)(int))
 {
 	if (del == NULL)
 		return ;

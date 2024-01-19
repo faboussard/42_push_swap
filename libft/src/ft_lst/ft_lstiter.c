@@ -12,7 +12,7 @@
 
 #include "../../inc/libft.h"
 
-void	ft_lstiter(t_node *lst, void (*f)(void *))
+void	ft_lstiter(t_node_int *lst, void (*f)(int))
 {
 	if (f == NULL || lst == NULL)
 		return ;
