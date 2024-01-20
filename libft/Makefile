@@ -48,6 +48,7 @@ SRC=src/ft_is/ft_isalnum.c\
 	    src/ft_to/ft_itoa.c\
 	    src/ft_to/ft_tolower.c\
 	    src/ft_to/ft_toupper.c\
+	    src/ft_lst/create_node_and_add.c\
 
 OBJECTS=$(SRC:.c=.o)
 

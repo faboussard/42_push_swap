@@ -49,7 +49,6 @@ int	ft_printf(const char *s, ...)
 	va_list	args;
 
 	output = 0;
-	tmp = 0;
 	va_start(args, s);
 	while (*s != '\0')
 	{

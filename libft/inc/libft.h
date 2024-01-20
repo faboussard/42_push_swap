@@ -72,6 +72,7 @@ int	ft_lstsize(t_node_int *lst);
 t_node_int	*ft_lstlast(t_node_int *lst);
 t_node_int	*ft_lstbeforelast(t_node_int *lst);
 void	ft_lstadd_back(t_node_int **node, t_node_int *new);
+void *create_node_and_add_back(const char *av, t_node_int **one_stack);
 void	ft_lstdelone(t_node_int *lst, void (*del)(int));
 void	ft_lstclear(t_node_int **lst);
 void	ft_lstiter(t_node_int *lst, void (*f)(int));
