@@ -31,9 +31,11 @@ void ft_move_both(enum sort_both command, t_node_int **first_stack, t_node_int *
 //***sorting
 void sort_3_elements(t_node_int **one_stack);
 void sort_4_elements(t_node_int **one_stack);
+void radix_sort(t_node_int **one_stack, t_node_int **another_stack);
 
 //***utils
 t_node_int *find_node_with_max_value(t_node_int *head);
 int is_stack_sorted(t_node_int *one_stack);
+void	init_index(t_node_int **stack);
 
 #endif //PUSH_SWAP_PUSH_SWAP_H

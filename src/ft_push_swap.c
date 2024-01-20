@@ -1,6 +1,5 @@
 #include "../inc/push_swap.h"
-// if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
-//			exit(1);
+
 int main()
 {
 
@@ -61,10 +60,11 @@ int main()
 //    else
 //        printf("%s", "not sorted");
 
-	sort_4_elements(&a_stack);
+	init_index(&a_stack);
+	radix_sort(&a_stack, &b_stack);
     while (a_stack != NULL)
     {
-        printf("test_astack\n");
+        printf("test_a_stack\n");
         printf("%d\n", a_stack->content);
         a_stack = a_stack->next;
     }

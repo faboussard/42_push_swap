@@ -22,6 +22,7 @@ t_node_int	*ft_lstnew(int content)
 	if (new_element == NULL)
 		return (NULL);
 	new_element->content = content;
+	new_element->index = -1;
 	new_element->next = NULL;
 	return (new_element);
 }
