@@ -1,7 +1,7 @@
 #include "../inc/push_swap.h"
 // if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
 //			exit(1);
-int main(int ac, char **av)
+int main(int ac, const char **av)
 {
 
 	t_node_int *b_stack;
@@ -10,13 +10,10 @@ int main(int ac, char **av)
 	a_stack = NULL;
 	b_stack = NULL;
 
-	//const char *av[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
-   // const char *av2[] = {"1", "50", "9", "3"};
-	int ac = 4;
-	//if (ac == 1 || (ac = 2 && !av[1][0]))
-	//	return (EXIT_FAILURE);
-	check_errors_and_init_stack(&a_stack, av, ac);
-
+	if (ac == 1)
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
+	if (check_errors_and_init_stack(&a_stack, av, ac) == NOT_OK)
+		return (ft_putstr_fd("Error\n", STDERR_FILENO)); 
 //    while (a_stack != NULL)
 //    {
 //        printf("test\n");
@@ -61,24 +58,23 @@ int main(int ac, char **av)
 //    else
 //        printf("%s", "not sorted");
 
-if (ac == )
-	sort_4_elements(&a_stack);
+if ((is_stack_sorted(a_stack)) == OK)
+	ft_printf("sorted");
+if (ft_lstsize(a_stack) == 3)
+	sort_3_elements(&a_stack);
+else
+{
+	radix_sort(&a_stack, &b_stack);
     while (a_stack != NULL)
     {
-        printf("test_astack\n");
-        printf("%d\n", a_stack->content);
+        ft_printf("test_astack\n");
+        ft_printf("%d\n", a_stack->content);
         a_stack = a_stack->next;
     }
-
-    free(a_stack);
-	free(b_stack);
-	return 0;
+	if ((is_stack_sorted(a_stack)) == OK)
+	ft_printf("sorted");
 }
-
-/*
-$>ARG="4 67 3 87 23"; ./push_swap $ARG | wc -l
-6
-$>ARG="4 67 3 87 23"; ./push_swap $ARG | ./checker_OS $ARG
-OK
-		$>
- */
+free(a_stack);
+free(b_stack);
+return 0;
+}

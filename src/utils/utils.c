@@ -28,3 +28,34 @@ t_node_int *find_node_with_max_value(t_node_int *head)
 	}
 	return (max_node);
 }
+
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		split[i] = NULL;
+		i++;
+	}
+	free(split);
+}
+
+int create_node_and_add_back(const char *av, t_node_int **one_stack)
+{
+	int n;
+	t_node_int	*new_node;
+	
+	n = ft_atoi(av);
+	new_node = ft_lstnew(n);
+	if (new_node == NULL)
+		{
+			ft_lstclear(&new_node);
+			write(2, "Error\n", 12);
+			return (NOT_OK); 
+		}
+	ft_lstadd_back(one_stack, new_node);
+	return (OK); 
+}

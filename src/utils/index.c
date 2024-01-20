@@ -1,4 +1,4 @@
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 static t_node_int	*get_min_node(t_node_int **one_stack)
 {

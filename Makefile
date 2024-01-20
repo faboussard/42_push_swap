@@ -14,17 +14,17 @@ SRCS        := src/commands/push.c \
 	src/commands/rev_rotate.c \
 	src/commands/rotate.c \
 	src/commands/swap.c \
+	src/utils/index.c \
 	src/utils/input_check.c \
 	src/utils/utils.c \
 	src/utils/sort_tiny.c \
 	src/utils/radix.c \
-	src/utils/index.c \
-	src/ft_push_swap.c
+	src/push_swap.c
 
 all:   mylibft \
 		$(NAME)
 
-OBJ         := $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+OBJ:= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) $(LIBFT) $(LIBFT)
 		$(CC) $(CFLAGS) -c $< -o $@
