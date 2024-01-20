@@ -1,6 +1,7 @@
 #include "../inc/push_swap.h"
-
-int main()
+// if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
+//			exit(1);
+int main(int ac, char **av)
 {
 
 	t_node_int *b_stack;
@@ -9,12 +10,12 @@ int main()
 	a_stack = NULL;
 	b_stack = NULL;
 
-	const char *av[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
-    const char *av2[] = {"1", "50", "9", "3"};
+	//const char *av[] = {"1", "2", "3", "4", "5", "6", "7", "8"};
+   // const char *av2[] = {"1", "50", "9", "3"};
 	int ac = 4;
 	//if (ac == 1 || (ac = 2 && !av[1][0]))
 	//	return (EXIT_FAILURE);
-	check_errors_and_init_stack(&a_stack, av2, ac);
+	check_errors_and_init_stack(&a_stack, av, ac);
 
 //    while (a_stack != NULL)
 //    {
@@ -60,11 +61,11 @@ int main()
 //    else
 //        printf("%s", "not sorted");
 
-	init_index(&a_stack);
-	radix_sort(&a_stack, &b_stack);
+if (ac == )
+	sort_4_elements(&a_stack);
     while (a_stack != NULL)
     {
-        printf("test_a_stack\n");
+        printf("test_astack\n");
         printf("%d\n", a_stack->content);
         a_stack = a_stack->next;
     }

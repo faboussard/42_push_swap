@@ -14,8 +14,14 @@ void rotate_one(t_node_int **head)
 	is_last->next->next = NULL;
 }
 
-void rotate_both(t_node_int **first_stack_head, t_node_int **second_stack_head)
+void do_ra(t_node_int **head)
 {
-    rotate_one(first_stack_head);
-    rotate_one(second_stack_head);
+    rotate_one(head);
+    ft_printf("ra\n");
+}
+
+void do_rb(t_node_int **head)
+{
+    rotate_one(head);
+    ft_printf("rb\n");
 }

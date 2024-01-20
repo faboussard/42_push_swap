@@ -6,11 +6,11 @@ void sort_3_elements(t_node_int **one_stack)
 
 	max_value_node = find_node_with_max_value(*one_stack);
     if (max_value_node == *one_stack)
-        rotate_one(one_stack);
+        do_ra(one_stack);
     if ((*one_stack)->next == max_value_node)
-		rev_rotate_one(one_stack);
+		do_rra(one_stack);
     if ((*one_stack)->content > (*one_stack)->next->content)
-        swap_one(one_stack);
+        do_sa(one_stack);
 }
 /*
 void sort_4_elements(t_node_int **one_stack)

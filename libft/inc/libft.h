@@ -19,12 +19,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_node
-{
-	void			*content;
-	struct s_node	*next;
-}	t_node;
-
 typedef struct s_node_int
 {
 	int				content;
@@ -32,6 +26,12 @@ typedef struct s_node_int
 	struct s_node_int	*next;
 	struct s_node_int	*prev;
 }	t_node_int;
+
+typedef struct s_node
+{
+	void			*content;
+	struct s_node	*next;
+}	t_node;
 
 int		ft_atoi(const char *string);
 long	ft_atol(const char *s);

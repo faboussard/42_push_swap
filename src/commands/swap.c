@@ -15,8 +15,14 @@ void swap_one(t_node_int **head)
 	(*head)->index = index;
 }
 
-void swap_both(t_node_int **first_stack_head, t_node_int **second_stack_head)
+void do_sa(t_node_int **head)
 {
-    swap_one(first_stack_head);
-    swap_one(second_stack_head);
+    swap_one(head);
+    ft_printf("sa\n");
+}
+
+void do_sb(t_node_int **head)
+{
+    swap_one(head);
+    ft_printf("sb\n");
 }
