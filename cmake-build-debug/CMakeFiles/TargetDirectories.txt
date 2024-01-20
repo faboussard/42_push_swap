@@ -1,3 +1,0 @@
-/home/faboussa/42_push_swap/cmake-build-debug/CMakeFiles/push_swap.dir
-/home/faboussa/42_push_swap/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/faboussa/42_push_swap/cmake-build-debug/CMakeFiles/rebuild_cache.dir
