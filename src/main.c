@@ -11,7 +11,7 @@ int main(void)
 	b_stack = NULL;
 
 	int ac = 4;
-	const char *av[] = {"1", "5", "3", "4"};
+	char *av[] = {"1", "5", "3", "4"};
 
 	//if (ac == 1)
 	//	return (ft_putstr_fd("Error\n", STDERR_FILENO));
@@ -64,7 +64,17 @@ int main(void)
 	if ((is_stack_sorted(a_stack)) == OK)
 		ft_printf("sorted");
 	else if (ft_lstsize(a_stack) == 3)
+	{
 		sort_3_elements(&a_stack);
+		while (a_stack != NULL)
+		{
+			ft_printf("test_astack\n");
+			ft_printf("%d\n", a_stack->content);
+			a_stack = a_stack->next;
+		}
+		if ((is_stack_sorted(a_stack)) == OK)
+			ft_printf("sorted");
+	}
 	else
 	{
 		radix_sort(&a_stack, &b_stack);

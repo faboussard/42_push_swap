@@ -85,3 +85,14 @@
 31	61	1705860016858584085	push_swap	98c40c3c62f03bc1
 0	30	1705860068923526955	CMakeFiles/push_swap.dir/src/main.c.o	1e43c3c99e7faebf
 30	62	1705860068963527680	push_swap	98c40c3c62f03bc1
+0	19	1705860413821763742	CMakeFiles/push_swap.dir/src/main.c.o	1e43c3c99e7faebf
+19	46	1705860413849764248	push_swap	98c40c3c62f03bc1
+0	19	1705860461282621040	CMakeFiles/push_swap.dir/src/main.c.o	1e43c3c99e7faebf
+19	46	1705860461310621546	push_swap	98c40c3c62f03bc1
+0	30	1705860497579276563	CMakeFiles/push_swap.dir/src/main.c.o	1e43c3c99e7faebf
+30	59	1705860497619277285	push_swap	98c40c3c62f03bc1
+1	20	1705860536071971648	CMakeFiles/push_swap.dir/src/main.c.o	1e43c3c99e7faebf
+20	45	1705860536095972081	push_swap	98c40c3c62f03bc1
+1	30	1705861003808411954	CMakeFiles/push_swap.dir/src/utils/radix.c.o	3913796d82ab6c2e
+1	30	1705861003808411954	CMakeFiles/push_swap.dir/libft/src/ft_lst/ft_lst_create_and_add.c.o	b5bd4116c74ca9dd
+30	57	1705861003844412603	push_swap	98c40c3c62f03bc1
