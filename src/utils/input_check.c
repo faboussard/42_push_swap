@@ -30,7 +30,6 @@ static int	error_duplicate(t_node_int *t_stack, int n)
 static void free_errors(t_node_int **a_stack)
 {
 	ft_lstclear(a_stack);
-	write(2, "Error\n", 7);
 }
 
 int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
@@ -45,17 +44,26 @@ int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
 		j = 0;
 		split = ft_split(av[i], ' ');
 		if (split[j] == NULL)
-			return (NOT_OK);
+			return (0);
 		while (split[j])
 		{
 			if (ft_atol(split[j]) > INT_MAX || ft_atol(split[j]) < INT_MIN)
 				return (NOT_OK);
 			if (error_syntax(split[j]) == NOT_OK)
+			{
 				free_errors(one_stack);
+				return (NOT_OK);
+			}
 			if (error_duplicate(*one_stack, (int)(ft_atol(split[j]))) == NOT_OK)
+			{
 				free_errors(one_stack);
+				return (NOT_OK);
+			}
 			if (create_node_and_add_back(split[j], one_stack) == NULL)
+			{
 				free_errors(one_stack);
+				return (NOT_OK);
+			}
 			j++;
 		}
 		free_split(split);
