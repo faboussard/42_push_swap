@@ -10,7 +10,7 @@
 enum status {NOT_OK, OK};
 
 //***Handle errors
-int	check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac);
+int	check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac);
 
 //***commands
 void swap_one(t_node_int **head);

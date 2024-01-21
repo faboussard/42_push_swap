@@ -1,7 +1,7 @@
 #include "../inc/push_swap.h"
 // if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
 //			exit(1);
-int main(int ac, const char **av)
+int main(int ac, char **av)
 {
 
 	t_node_int *b_stack;

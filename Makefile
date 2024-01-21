@@ -1,48 +1,65 @@
-NAME        := push_swap
+# ====================== VARIABLES ====================== #
 
-LIBFT_H     := libft/inc/libft.h
-LIBFT       := libft/libft.a
-INC         := inc/
-SRC_DIR     := srcs/
-OBJ_DIR     := obj/
+# ---- Final executable ---- #
+NAME		=	push_swap
 
-CC          := cc
-CFLAGS      := -Wall -Wextra -Werror -g3
-RM          := rm -f
+LIBFT		=	libft/libft.a
 
-SRCS        := src/commands/push.c \
-	src/commands/rev_rotate.c \
-	src/commands/rotate.c \
-	src/commands/swap.c \
-	src/utils/index.c \
-	src/utils/input_check.c \
-	src/utils/utils.c \
-	src/utils/sort_tiny.c \
-	src/utils/radix.c \
-	src/push_swap.c
+# ---- Directories ---- #
+DIR_HEADERS	=	inc/
+DIR_SRCS 	=	src/
+DIR_LIBFT 	=	libft/
+DIR_OBJS 	=	.objs/
 
-all:   mylibft \
-		$(NAME)
+# ---- Files path ---- #
+HEADERS 	= 	${DIR_HEADERS}push_swap.h \
+				${DIR_LIBFT}${DIR_HEADERS}libft.h
 
-OBJ:= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
+SRCS        := $(DIR_SRCS)main.c \
+	$(DIR_SRCS)commands/push.c \
+	$(DIR_SRCS)commands/rev_rotate.c \
+	$(DIR_SRCS)commands/rotate.c \
+	$(DIR_SRCS)commands/swap.c \
+	$(DIR_SRCS)utils/index.c \
+	$(DIR_SRCS)utils/input_check.c \
+	$(DIR_SRCS)utils/utils.c \
+	$(DIR_SRCS)utils/sort_tiny.c \
+	$(DIR_SRCS)utils/radix.c \
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) $(LIBFT) $(LIBFT_H)
-		$(CC) $(CFLAGS) -c $< -o $@
+OBJS		=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
-$(NAME): $(OBJ) $(LIBFT_H) $(INC)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
+# ---- Flag ---- #
+CFLAGS 		= 	-Wall -Werror -Wextra -g3
 
-mylibft:
-		make -C ./libft
+# ====================== RULES ====================== #
 
+.PHONY: all re clean fclean FORCE
+
+# ---- Compiled rules ---- #
+all:			${NAME}
+
+${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
+				@ mkdir -p ${shell dirname $@}
+				${CC} ${CFLAGS} -c $< -o $@
+
+${NAME}: 		${LIBFT} ${OBJS}
+				${CC} ${CFLAGS} ${OBJS} ${LIBFT} -o ${NAME}
+
+${DIR_OBJS}:
+				mkdir -p ${DIR_OBJS}
+
+${LIBFT}: 		FORCE
+				${MAKE} -C ${DIR_LIBFT}
+
+# ---- Usual rules --- #
 clean:
-		$(RM) -r $(OBJ_DIR)
-		make clean -C ./libft
+				make fclean -C ${DIR_LIBFT}
+				${RM} -rf ${DIR_OBJS}
 
-fclean: clean
-		$(RM) $(NAME)
-		make fclean -C ./libft
+fclean:			clean
+				${RM} ${NAME}
+				make fclean -C ${DIR_LIBFT}
 
-re: fclean all
+re: 			fclean all
 
-.PHONY: all clean fclean re mylibft
+FORCE:

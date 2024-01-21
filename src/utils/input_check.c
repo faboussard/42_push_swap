@@ -33,7 +33,7 @@ static void free_errors(t_node_int **a_stack)
 	write(2, "Error\n", 7);
 }
 
-int check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac)
+int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
 {
 	int			i;
 	int			j;
