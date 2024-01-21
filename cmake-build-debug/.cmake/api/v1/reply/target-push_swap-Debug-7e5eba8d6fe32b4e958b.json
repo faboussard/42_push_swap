@@ -55,11 +55,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/juba/push_swap/inc"
+					"path" : "/home/fanny/pushswap/inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/juba/push_swap/libft/inc"
+					"path" : "/home/fanny/pushswap/libft/inc"
 				}
 			],
 			"language" : "C",

@@ -38,7 +38,7 @@ int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
 	int			j;
 	char		**split;
 
-	i = 0;
+	i = 1;
 	while (i < ac)
 	{
 		j = 0;

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/juba/push_swap/cmake-build-debug"
+			"value" : "/home/fanny/pushswap/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -415,7 +415,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/juba/push_swap/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/fanny/pushswap/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -475,7 +475,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/juba/push_swap"
+			"value" : "/home/fanny/pushswap"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1035,7 +1035,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/juba/push_swap/cmake-build-debug"
+			"value" : "/home/fanny/pushswap/cmake-build-debug"
 		},
 		{
 			"name" : "push_swap_IS_TOP_LEVEL",
@@ -1059,7 +1059,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/juba/push_swap"
+			"value" : "/home/fanny/pushswap"
 		}
 	],
 	"kind" : "cache",

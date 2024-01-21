@@ -1,7 +1,7 @@
 #include "../inc/push_swap.h"
 
-//int main(int ac, char **av)
-int main(void)
+int main(int ac, char **av)
+//int main(void)
 {
 
 	t_node_int *b_stack;
@@ -10,11 +10,11 @@ int main(void)
 	a_stack = NULL;
 	b_stack = NULL;
 
-	int ac = 4;
-	char *av[] = {"1", "5", "3", "4"};
+//	int ac = 4;
+//	char *av[] = {"1", "2", "3", "4"};
 
-	//if (ac == 1)
-	//	return (ft_putstr_fd("Error\n", STDERR_FILENO));
+	if (ac < 2)
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if (check_errors_and_init_stack(&a_stack, av, ac) == NOT_OK)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 //    while (a_stack != NULL)
