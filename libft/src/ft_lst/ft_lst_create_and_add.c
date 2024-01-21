@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
-#include "../../inc/push_swap.h"
 
 void *create_node_and_add_back(const char *av, t_node_int **one_stack)
 {

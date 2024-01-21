@@ -11,6 +11,34 @@ int is_stack_sorted(t_node_int *one_stack)
     return (OK);
 }
 
+/*
+int check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac)
+{
+	int			i;
+	int			j;
+	char		**split;
+
+	i = 0;
+	while (i++ < ac)
+	{
+		j = 0;
+		split = ft_split(av[i], ' ');
+		if (split[j] == NULL)
+			return (NOT_OK);
+		while (split[j++])
+		{
+			if (ft_atol(split[j]) > INT_MAX || ft_atol(split[j]) < INT_MIN)
+				return (NOT_OK);
+			if ((error_syntax(split[j]) == NOT_OK) || (error_duplicate(*one_stack, (int)(ft_atol(split[j])) == NOT_OK))
+			|| (create_node_and_add_back(split[j], one_stack) == NULL))
+				free_errors(one_stack);
+		}
+		free_split(split);
+	}
+	return (OK);
+}
+*/
+
 t_node_int *find_node_with_max_value(t_node_int *head)
 {
 	long max;

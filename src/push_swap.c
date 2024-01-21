@@ -1,7 +1,7 @@
 #include "../inc/push_swap.h"
 // if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*a_stack, (int)n))
 //			exit(1);
-int main(void)
+int main(int ac, const char **av)
 {
 
 	t_node_int *b_stack;
@@ -10,8 +10,8 @@ int main(void)
 	a_stack = NULL;
 	b_stack = NULL;
 
-	int ac = 4;
-	const char *av[] = {"1", "2", "3", "4"};
+//	int ac = 4;
+//	const char *av[] = {"1", "2", "3", "4"};
 
 	if (ac == 1)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
@@ -19,8 +19,8 @@ int main(void)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO)); 
 //    while (a_stack != NULL)
 //    {
-//        printf("test\n");
-//        printf("%d\n", a_stack->content);
+//        ft_printf("test\n");
+//        ft_printf("%d\n", a_stack->content);
 //        a_stack = a_stack->next;
 //    }
 
@@ -63,7 +63,7 @@ int main(void)
 
 if ((is_stack_sorted(a_stack)) == OK)
 	ft_printf("sorted");
-if (ft_lstsize(a_stack) == 3)
+else if (ft_lstsize(a_stack) == 3)
 	sort_3_elements(&a_stack);
 else
 {

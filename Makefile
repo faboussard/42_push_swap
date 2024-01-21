@@ -26,7 +26,7 @@ all:   mylibft \
 
 OBJ:= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) $(LIBFT) $(LIBFT)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INC) $(LIBFT) $(LIBFT_H)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ) $(LIBFT_H) $(INC)

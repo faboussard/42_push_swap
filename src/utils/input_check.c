@@ -3,28 +3,28 @@
 static int	error_syntax(const char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
-		return (OK);
+		return (NOT_OK);
 	if ((*str_n == '+' || *str_n == '-') && !(str_n[1] >= '0' && str_n[1] <= '9'))
-		return (OK);
+		return (NOT_OK);
 	while (*++str_n)
 	{
 		if (!(*str_n >= '0' && *str_n <= '9'))
-			return (OK);
+			return (NOT_OK);
 	}
-	return (NOT_OK);
+	return (OK);
 }
 
 static int	error_duplicate(t_node_int *t_stack, int n)
 {
-	if (!t_stack)
-		return (NOT_OK);
+	//if (!t_stack)
+	//	return (NOT_OK);
 	while (t_stack)
 	{
 		if (t_stack->content == n)
-			return (OK);
+			return (NOT_OK);
 		t_stack = t_stack->next;
 	}
-	return (NOT_OK);
+	return (OK);
 }
 
 static void free_errors(t_node_int **a_stack)
@@ -39,12 +39,12 @@ int check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac)
 	int			j;
 	char		**split;
 
-	j = 0;
 	i = 0;
 	while (i < ac)
 	{
+		j = 0;
 		split = ft_split(av[i], ' ');
-		if (!split[j])
+		if (split[j] == NULL)
 			return (NOT_OK);
 		while (split[j])
 		{
