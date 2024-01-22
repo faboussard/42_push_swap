@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	a_stack = NULL;
 	b_stack = NULL;
 	if (ac < 2)
-		return (ft_putstr_fd("Error\n", STDERR_FILENO));
+		return (0);
 	if (check_errors_and_init_stack(&a_stack, av, ac) == NOT_OK)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if ((is_stack_sorted(a_stack)) == OK)
@@ -32,6 +32,13 @@ int	main(int ac, char **av)
 		init_index(&a_stack);
 		radix_sort(&a_stack, &b_stack);
 	}
+	/*
+	while (a_stack != NULL)
+	{
+		ft_printf("%d", a_stack->content);
+		a_stack = a_stack->next;
+	}
+	 */
 	ft_lstclear(&a_stack);
 	ft_lstclear(&b_stack);
 	return (0);
