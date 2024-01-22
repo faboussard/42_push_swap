@@ -14,7 +14,7 @@
 
 t_node_int	*ft_lstbeforelast(t_node_int *lst)
 {
-    while (lst && lst->next && lst->next->next != NULL)
-        lst = lst->next;
-    return (lst);
+	while (lst && lst->next && lst->next->next != NULL)
+		lst = lst->next;
+	return (lst);
 }

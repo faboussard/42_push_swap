@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_node_int *lst)
 {
-	int		i;
+	int			i;
 	t_node_int	*current;
 
 	current = lst;

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   index.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faboussa  <faboussa@student.42lyon.f>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/20 17:56:27 by faboussa          #+#    #+#             */
+/*   Updated: 2024/01/22 18:01:12 by faboussa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
 static t_node_int	*get_min_node(t_node_int **one_stack)
 {
 	t_node_int	*current;
 	t_node_int	*lst_min;
-	int		min;
+	int			min;
 
 	if (!(*one_stack))
 		return (NULL);
@@ -13,7 +25,8 @@ static t_node_int	*get_min_node(t_node_int **one_stack)
 	current = *one_stack;
 	while (current)
 	{
-		if ((current->index == -1) && (!min || current->content < lst_min->content))
+		if ((current->index == -1) && (!min
+				|| current->content < lst_min->content))
 		{
 			lst_min = current;
 			min = 1;
@@ -26,7 +39,7 @@ static t_node_int	*get_min_node(t_node_int **one_stack)
 void	init_index(t_node_int **stack)
 {
 	t_node_int	*lst;
-	int		index;
+	int			index;
 
 	index = 0;
 	lst = get_min_node(stack);

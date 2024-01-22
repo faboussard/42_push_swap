@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "../../inc/libft.h"
+#include <stdlib.h>
 
 static void	*ft_free_all_alloc(char **strs_array, size_t start)
 {
@@ -27,17 +27,18 @@ static void	*ft_free_all_alloc(char **strs_array, size_t start)
 	return (NULL);
 }
 
-
-static size_t count_letters(const char *str, char c)
+static size_t	count_letters(const char *str, char c)
 {
-	size_t count = 0;
+	size_t	count;
+
+	count = 0;
 	while (*str != '\0')
 	{
 		if (*str != c)
 			count++;
 		str++;
 	}
-	return count;
+	return (count);
 }
 
 /*
@@ -99,13 +100,13 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	split = malloc(sizeof(char **) *(count_letters(s, c) + 1));
+	split = malloc(sizeof(char **) * (count_letters(s, c) + 1));
 	if (split == NULL)
 		return (NULL);
 	split = fill_array_with_strings(split, s, c);
 	if (split == NULL)
 	{
-		free (split);
+		free(split);
 		return (NULL);
 	}
 	return (split);

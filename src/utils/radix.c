@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faboussa  <faboussa@student.42lyon.f>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/20 17:57:06 by faboussa          #+#    #+#             */
+/*   Updated: 2024/01/22 18:01:12 by faboussa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
-static int get_maxbits_lst(t_node_int *one_stack)
+static int	get_maxbits_lst(t_node_int *one_stack)
 {
-	t_node_int *current;
-	int max;
-	int max_b;
+	t_node_int	*current;
+	int			max;
+	int			max_b;
 
 	current = one_stack;
 	max = current->index;
 	max_b = 0;
-
 	while (current)
 	{
 		if (current->index > max)
@@ -21,13 +32,13 @@ static int get_maxbits_lst(t_node_int *one_stack)
 	return (max_b);
 }
 
-void radix_sort(t_node_int **one_stack, t_node_int **another_stack)
+void	radix_sort(t_node_int **one_stack, t_node_int **another_stack)
 {
-	t_node_int *current;
-	int	i;
-	int	j;
-	int	size;
-	int	max_b;
+	t_node_int	*current;
+	int			i;
+	int			j;
+	int			size;
+	int			max_b;
 
 	size = ft_lstsize(*one_stack);
 	max_b = get_maxbits_lst(*one_stack);
@@ -43,8 +54,7 @@ void radix_sort(t_node_int **one_stack, t_node_int **another_stack)
 			else
 				do_ra(one_stack);
 		}
-		while(ft_lstsize(*another_stack) != 0)
+		while (ft_lstsize(*another_stack) != 0)
 			do_pa(another_stack, one_stack);
 	}
 }
-

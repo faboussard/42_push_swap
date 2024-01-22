@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 	char	*little_found;
 
-	little_found = (char *) big;
+	little_found = (char *)big;
 	i = 0;
 	if (little[0] == '\0')
 		return (&little_found[i]);

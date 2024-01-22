@@ -14,45 +14,41 @@
 
 static size_t	check_format(const char c, va_list args)
 {
-	int	output;
+	int	out;
 
-	output = 0;
+	out = 0;
 	if (c == '\0')
 		return (-1);
 	if (c == '%')
-		output = ft_putchar('%');
+		out = ft_putchar('%');
 	if (c == 'c')
-		output = ft_putchar(va_arg(args, int));
+		out = ft_putchar(va_arg(args, int));
 	else if (c == 'i' || c == 'd')
-		output = ft_print_and_count_int(va_arg(args, int), "0123456789");
+		out = ft_print_and_count_int(va_arg(args, int), BASE10);
 	else if (c == 'p')
-		output = ft_print_and_count_unsigned_long(va_arg(args, unsigned long),
-				"0123456789abcdef");
+		out = print_and_count_ul(va_arg(args, unsigned long), BASE16_MIN);
 	else if (c == 's')
-		output = ft_putstr(va_arg(args, char *));
+		out = ft_putstr(va_arg(args, char *));
 	else if (c == 'u')
-		output = ft_print_and_count_unsigned_int(va_arg(args, unsigned int),
-				"0123456789");
+		out = print_and_count_u(va_arg(args, unsigned int), BASE10);
 	else if (c == 'x')
-		output = ft_print_and_count_unsigned_int((va_arg(args, unsigned int)),
-				"0123456789abcdef");
+		out = print_and_count_u((va_arg(args, unsigned int)), BASE16_MIN);
 	else if (c == 'X')
-		output = ft_print_and_count_unsigned_int((va_arg(args, unsigned int)),
-				"0123456789ABCDEF");
-	return (output);
+		out = print_and_count_u((va_arg(args, unsigned int)), BASE16_MAJ);
+	return (out);
 }
 
 int	ft_printf(const char *s, ...)
 {
 	int		output;
-	int 	tmp;
+	int		tmp;
 	va_list	args;
 
 	output = 0;
 	va_start(args, s);
 	while (*s != '\0')
 	{
-		tmp = output;	 
+		tmp = output;
 		if (*s == '%')
 			output += check_format(*(++s), args);
 		else

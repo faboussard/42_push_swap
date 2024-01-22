@@ -1,4 +1,0 @@
-**pb fonction lmax -> regarder copie sur local
-**ok avec debugger clion mais pas avec compil makefile. maffiche error en continu
-check avec le debugger vim.
-marchait correctement une fois avec precedent makefile.

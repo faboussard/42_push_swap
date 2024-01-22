@@ -1,48 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faboussa  <faboussa@student.42lyon.f>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/22 12:16:47 by faboussa          #+#    #+#             */
+/*   Updated: 2024/01/22 18:03:18 by faboussa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../inc/push_swap.h"
 
-int is_stack_sorted(t_node_int *one_stack)
+int	is_stack_sorted(t_node_int *one_stack)
 {
-    while (one_stack->next != NULL)
-    {
-        if (one_stack->content > one_stack->next->content)
-            return (NOT_OK);
-        one_stack = one_stack->next;
-    }
-    return (OK);
-}
-
-/*
-int check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac)
-{
-	int			i;
-	int			j;
-	char		**split;
-
-	i = 0;
-	while (i++ < ac)
+	while (one_stack->next != NULL)
 	{
-		j = 0;
-		split = ft_split(av[i], ' ');
-		if (split[j] == NULL)
+		if (one_stack->content > one_stack->next->content)
 			return (NOT_OK);
-		while (split[j++])
-		{
-			if (ft_atol(split[j]) > INT_MAX || ft_atol(split[j]) < INT_MIN)
-				return (NOT_OK);
-			if ((error_syntax(split[j]) == NOT_OK) || (error_duplicate(*one_stack, (int)(ft_atol(split[j])) == NOT_OK))
-			|| (create_node_and_add_back(split[j], one_stack) == NULL))
-				free_errors(one_stack);
-		}
-		free_split(split);
+		one_stack = one_stack->next;
 	}
 	return (OK);
 }
-*/
 
-t_node_int *find_node_with_max_value(t_node_int *head)
+t_node_int	*find_node_with_max_value(t_node_int *head)
 {
-	long max;
-	t_node_int *max_node;
+	long		max;
+	t_node_int	*max_node;
 
 	max = LONG_MIN;
 	while (head)

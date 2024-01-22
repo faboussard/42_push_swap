@@ -12,7 +12,7 @@
 
 #include "../../inc/libft.h"
 
-int	ft_print_and_count_unsigned_long(unsigned long int n, const char *base)
+int	print_and_count_ul(unsigned long int n, char *base)
 {
 	unsigned long int	size;
 	int					result;
@@ -25,17 +25,17 @@ int	ft_print_and_count_unsigned_long(unsigned long int n, const char *base)
 		size = ft_strlen(base);
 		if (n >= size)
 		{
-			result += ft_print_and_count_unsigned_long(n / size, base);
+			result += print_and_count_ul(n / size, base);
 			if (result == -1)
 				return (-1);
 			return (ft_putchar(base[n % size]) + result);
 		}
 		else
-			return(ft_putstr("0x") + ft_putchar(base[n % size]));
+			return (ft_putstr("0x") + ft_putchar(base[n % size]));
 	}
 }
 
-int	ft_print_and_count_unsigned_int(unsigned int n, const char *base)
+int	print_and_count_u(unsigned int n, char *base)
 {
 	unsigned int	size;
 	int				result;
@@ -44,7 +44,7 @@ int	ft_print_and_count_unsigned_int(unsigned int n, const char *base)
 	size = ft_strlen(base);
 	if (n >= size)
 	{
-		result += ft_print_and_count_unsigned_int(n / size, base);
+		result += print_and_count_u(n / size, base);
 		if (result == -1)
 			return (-1);
 		return (ft_putchar(base[n % size]) + result);
@@ -72,7 +72,7 @@ int	ft_print_and_count_int(int n, const char *base)
 		n = -n;
 	}
 	if (n < size && n > 0)
-		return(ft_putchar(base[n % size]) + result);
+		return (ft_putchar(base[n % size]) + result);
 	else if (n >= size)
 	{
 		result += ft_print_and_count_int(n / size, base);
@@ -81,4 +81,3 @@ int	ft_print_and_count_int(int n, const char *base)
 	}
 	return (ft_putchar(base[n % size]) + result);
 }
-

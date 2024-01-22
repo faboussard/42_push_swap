@@ -12,9 +12,9 @@
 
 #include "../../inc/libft.h"
 
-void *create_node_and_add_back(const char *av, t_node_int **one_stack)
+void	*create_and_add(const char *av, t_node_int **one_stack)
 {
-	int n;
+	int			n;
 	t_node_int	*new_node;
 
 	n = ft_atoi(av);
@@ -23,7 +23,7 @@ void *create_node_and_add_back(const char *av, t_node_int **one_stack)
 	{
 		ft_lstclear(&new_node);
 		write(2, "Error\n", 7);
-		return NULL;
+		return (NULL);
 	}
 	ft_lstadd_back(one_stack, new_node);
 	return (one_stack);
