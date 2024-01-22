@@ -14,15 +14,13 @@ static int	error_syntax(const char *str_n)
 	return (OK);
 }
 
-static int	error_duplicate(t_node_int *t_stack, int n)
+static int	error_duplicate(t_node_int *one_stack, int n)
 {
-	//if (!t_stack)
-	//	return (NOT_OK);
-	while (t_stack)
+	while (one_stack)
 	{
-		if (t_stack->content == n)
+		if (one_stack->content == n)
 			return (NOT_OK);
-		t_stack = t_stack->next;
+		one_stack = one_stack->next;
 	}
 	return (OK);
 }
@@ -43,7 +41,7 @@ int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
 	{
 		j = 0;
 		split = ft_split(av[i], ' ');
-		if (split[j] == NULL)
+		if (split == NULL)
 			return (0);
 		while (split[j])
 		{
@@ -71,31 +69,3 @@ int check_errors_and_init_stack(t_node_int **one_stack, char **av, int ac)
 	}
 	return (OK);
 }
-
-/*
-void check_errors_and_init_stack(t_node_int **one_stack, const char **av, int ac)
-{
-	long n;
-	int	n_int;
-	ssize_t i;
-	t_node_int	*new_node;
-
-	i = 0;
-	while (i < ac)
-	{
-		n = ft_atol(av[i]);
-		if (error_syntax(av[i]) || (n > INT_MAX || n < INT_MIN) || error_duplicate(*one_stack, (int)n))
-			free_errors(one_stack);
-		n_int = (int)n;
-		new_node = ft_lstnew(n_int);
-		if (new_node == NULL)
-		{
-			ft_lstclear(&new_node);
-			write(2, "Error\n", 12);
-			return;
-		}
-		ft_lstadd_back(one_stack, new_node);
-		i++;
-	}
-}
-*/

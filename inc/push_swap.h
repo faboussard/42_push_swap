@@ -23,8 +23,8 @@ void rev_rotate_one(t_node_int **head);
 void do_rra(t_node_int **head);
 void do_rrb(t_node_int **head);
 void push_head(t_node_int **src_stack_head, t_node_int **dest_stack_head);
-void do_pa(t_node_int **src_stack_head, t_node_int **dest_stack_head);
-void do_pb(t_node_int **src_stack_head, t_node_int **dest_stack_head);
+void	do_pa(t_node_int **a_stack, t_node_int **b_stack);
+void	do_pb(t_node_int **a_stack, t_node_int **b_stack);
 
 //***sorting
 void sort_3_elements(t_node_int **one_stack);

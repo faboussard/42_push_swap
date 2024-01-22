@@ -67,4 +67,5 @@ add_executable(push_swap
         src/utils/sort_tiny.c
         src/utils/utils.c
         src/main.c
-        libft/src/ft_lst/ft_lst_create_and_add.c)
+        libft/src/ft_lst/ft_lst_create_and_add.c
+        src/utils/radix.c)

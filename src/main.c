@@ -10,8 +10,8 @@ int main(int ac, char **av)
 	a_stack = NULL;
 	b_stack = NULL;
 
-//	int ac = 4;
-//	char *av[] = {"1", "2", "3", "4"};
+//	int ac = 5;
+//	char *av[] = {"1", "2", "5", "4"};
 
 	if (ac < 2)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
@@ -63,7 +63,7 @@ int main(int ac, char **av)
 
 	if ((is_stack_sorted(a_stack)) == OK)
 		ft_printf("sorted");
-	else if (ft_lstsize(a_stack) == 3)
+	else if (ac == 3)
 	{
 		sort_3_elements(&a_stack);
 		while (a_stack != NULL)
@@ -77,6 +77,7 @@ int main(int ac, char **av)
 	}
 	else
 	{
+		init_index(&a_stack);
 		radix_sort(&a_stack, &b_stack);
 		while (a_stack != NULL)
 		{
@@ -84,10 +85,10 @@ int main(int ac, char **av)
 			ft_printf("%d\n", a_stack->content);
 			a_stack = a_stack->next;
 		}
-		if ((is_stack_sorted(a_stack)) == OK)
-			ft_printf("sorted");
+//		if ((is_stack_sorted(a_stack)) == OK)
+//			ft_printf("sorted");
 	}
-	free(a_stack);
-	free(b_stack);
+	ft_lstclear(&a_stack);
+	ft_lstclear(&b_stack);
 	return 0;
 }

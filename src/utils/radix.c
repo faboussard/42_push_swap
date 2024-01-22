@@ -29,8 +29,8 @@ void radix_sort(t_node_int **one_stack, t_node_int **another_stack)
 	int	size;
 	int	max_b;
 
-	max_b = get_maxbits_lst(*one_stack);
 	size = ft_lstsize(*one_stack);
+	max_b = get_maxbits_lst(*one_stack);
 	i = -1;
 	while (++i < max_b)
 	{
@@ -39,12 +39,12 @@ void radix_sort(t_node_int **one_stack, t_node_int **another_stack)
 		{
 			current = *one_stack;
 			if (((current->index >> i) & 1) == 0)
-				push_head(one_stack, another_stack);
+				do_pb(another_stack, one_stack);
 			else
-				rotate_one(one_stack);
+				do_ra(one_stack);
 		}
 		while(ft_lstsize(*another_stack) != 0)
-			push_head(another_stack, one_stack);
+			do_pa(another_stack, one_stack);
 	}
 }
 
