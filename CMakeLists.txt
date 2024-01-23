@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(push_swap C)
+project(push_swap_tester/push_swap C)
 
 set(CMAKE_C_STANDARD 11)
 

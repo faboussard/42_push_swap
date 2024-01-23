@@ -17,7 +17,7 @@ int	is_stack_sorted(t_node_int *one_stack)
 	while (one_stack->next != NULL)
 	{
 		if (one_stack->content > one_stack->next->content)
-			return (NOT_OK);
+			return (NOK);
 		one_stack = one_stack->next;
 	}
 	return (OK);

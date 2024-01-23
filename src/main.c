@@ -21,24 +21,17 @@ int	main(int ac, char **av)
 	b_stack = NULL;
 	if (ac < 2)
 		return (0);
-	if (check_errors_and_init_stack(&a_stack, av, ac) == NOT_OK)
+	if (check_errors_and_init_stack(&a_stack, av, ac) == NOK)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if ((is_stack_sorted(a_stack)) == OK)
-		ft_printf("sorted");
-	else if (ac == 3)
+		return (0);
+	else if (ac == 4)
 		sort_3_elements(&a_stack);
 	else
 	{
 		init_index(&a_stack);
 		radix_sort(&a_stack, &b_stack);
 	}
-	/*
-	while (a_stack != NULL)
-	{
-		ft_printf("%d", a_stack->content);
-		a_stack = a_stack->next;
-	}
-	 */
 	ft_lstclear(&a_stack);
 	ft_lstclear(&b_stack);
 	return (0);

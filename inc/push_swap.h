@@ -21,7 +21,7 @@
 
 enum		e_status
 {
-	NOT_OK,
+	NOK,
 	OK
 };
 

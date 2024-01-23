@@ -42,7 +42,7 @@ ${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
 				@ mkdir -p ${shell dirname $@}
 				${CC} ${CFLAGS} -c $< -o $@
 
-${NAME}: 		${LIBFT} ${OBJS}
+${NAME}: 		${LIBFT} ${OBJS} ${HEADERS}
 				${CC} ${CFLAGS} ${OBJS} ${LIBFT} -o ${NAME}
 
 ${DIR_OBJS}:
