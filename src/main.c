@@ -24,7 +24,7 @@ int	main(int ac, char **av)
 	if (check_errors_and_init_stack(&a_stack, av, ac) == NOK)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if ((is_stack_sorted(a_stack)) == OK)
-		return (0);
+		return (ft_lstclear(&a_stack), 0);
 	else if (ac == 4)
 		sort_3_elements(&a_stack);
 	else
