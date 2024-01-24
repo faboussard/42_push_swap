@@ -44,14 +44,15 @@ void		do_pa(t_node_int **a_stack, t_node_int **b_stack);
 void		do_pb(t_node_int **a_stack, t_node_int **b_stack);
 
 //***sorting
-void		sort_3_elements(t_node_int **one_stack);
-void		sort_4_elements(t_node_int **one_stack);
-void		radix_sort(t_node_int **one_stack, t_node_int **another_stack);
+void		sort_3_elements(t_node_int **a_stack);
+void		sort_twenty(t_node_int **a_stack, t_node_int **b_stack);
+void		radix_sort(t_node_int **a_stack, t_node_int **b_stack);
 
 //***utils
 t_node_int	*find_node_with_max_value(t_node_int *head);
 int			is_stack_sorted(t_node_int *one_stack);
 void		init_index(t_node_int **stack);
 void		free_split(char **split);
+int			find_min(t_node_int *stack);
 
 #endif //PUSH_SWAP_H

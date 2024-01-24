@@ -54,3 +54,19 @@ void	free_split(char **split)
 	}
 	free(split);
 }
+
+int	find_min(t_node_int *stack)
+{
+	t_node_int	*current;
+	int			min_value;
+
+	current = stack;
+	min_value = current->index;
+	while (current != NULL)
+	{
+		if (current->index < min_value)
+			min_value = current->index;
+		current = current->next;
+	}
+	return (min_value);
+}

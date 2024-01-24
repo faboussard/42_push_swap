@@ -25,13 +25,13 @@ int	main(int ac, char **av)
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if ((is_stack_sorted(a_stack)) == OK)
 		return (ft_lstclear(&a_stack), 0);
-	else if (ac == 4)
+	init_index(&a_stack);
+	if (ac == 4)
 		sort_3_elements(&a_stack);
+	else if (ac < 20)
+		sort_twenty(&a_stack, &b_stack);
 	else
-	{
-		init_index(&a_stack);
 		radix_sort(&a_stack, &b_stack);
-	}
 	ft_lstclear(&a_stack);
 	ft_lstclear(&b_stack);
 	return (0);

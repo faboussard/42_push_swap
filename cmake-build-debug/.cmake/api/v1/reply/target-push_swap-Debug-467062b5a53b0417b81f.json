@@ -48,18 +48,18 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu11 -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu11 -fdiagnostics-color=always"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/faboussa/42_push_swap/inc"
+					"path" : "/home/juba/push_swap/inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/faboussa/42_push_swap/libft/inc"
+					"path" : "/home/juba/push_swap/libft/inc"
 				}
 			],
 			"language" : "C",

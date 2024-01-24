@@ -32,7 +32,7 @@ static int	get_maxbits_lst(t_node_int *one_stack)
 	return (max_b);
 }
 
-void	radix_sort(t_node_int **one_stack, t_node_int **another_stack)
+void	radix_sort(t_node_int **a_stack, t_node_int **b_stack)
 {
 	t_node_int	*current;
 	int			i;
@@ -40,21 +40,21 @@ void	radix_sort(t_node_int **one_stack, t_node_int **another_stack)
 	int			size;
 	int			max_b;
 
-	size = ft_lstsize(*one_stack);
-	max_b = get_maxbits_lst(*one_stack);
+	size = ft_lstsize(*a_stack);
+	max_b = get_maxbits_lst(*a_stack);
 	i = -1;
 	while (++i < max_b)
 	{
 		j = -1;
 		while (++j < size)
 		{
-			current = *one_stack;
+			current = *a_stack;
 			if (((current->index >> i) & 1) == 0)
-				do_pb(another_stack, one_stack);
+				do_pb(b_stack, a_stack);
 			else
-				do_ra(one_stack);
+				do_ra(a_stack);
 		}
-		while (ft_lstsize(*another_stack) != 0)
-			do_pa(another_stack, one_stack);
+		while (ft_lstsize(*b_stack) != 0)
+			do_pa(b_stack, a_stack);
 	}
 }
