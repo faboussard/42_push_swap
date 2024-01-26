@@ -5,61 +5,80 @@ NAME		=	push_swap
 
 LIBFT		=	libft/libft.a
 
-# ---- Directories ---- #
+# ------------ DIRECTORIES ------------ #
+
 DIR_HEADERS	=	inc/
 DIR_SRCS 	=	src/
-DIR_LIBFT 	=	libft/
+DIR_LIBFT 	=	$(addprefix $(DIR_LIB), libft/)
 DIR_OBJS 	=	.objs/
 
-# ---- Files path ---- #
+# ------------- SHORTCUTS ------------- #
+
+SRCS			=	$(addprefix $(DIR_SRCS),$(LIST_SRC))
+LIBFT			=	$(addprefix $(DIR_LIBFT), libft.a)
+
+# --------------- FILES --------------- #
+
 HEADERS 	= 	${DIR_HEADERS}push_swap.h \
 				${DIR_LIBFT}${DIR_HEADERS}libft.h
 
-SRCS        := $(DIR_SRCS)main.c \
-	$(DIR_SRCS)commands/push.c \
-	$(DIR_SRCS)commands/rev_rotate.c \
-	$(DIR_SRCS)commands/rotate.c \
-	$(DIR_SRCS)commands/swap.c \
-	$(DIR_SRCS)utils/index.c \
-	$(DIR_SRCS)utils/input_check.c \
-	$(DIR_SRCS)utils/utils.c \
-	$(DIR_SRCS)utils/sort_tiny.c \
-	$(DIR_SRCS)utils/radix.c \
+LIST_SRC        := main.c \
+	commands/push.c \
+	commands/rev_rotate.c \
+	commands/rotate.c \
+	commands/swap.c \
+	utils/index.c \
+	utils/input_check.c \
+	utils/utils.c \
+	utils/sort_tiny.c \
+	utils/radix.c \
 
 OBJS		=	${addprefix ${DIR_OBJS},${SRCS:.c=.o}}
 
-# ---- Flag ---- #
+# ------------ COMPILATION ------------ #
+
 CFLAGS 		= 	-Wall -Werror -Wextra -g3
+DEP_FLAGS	=	-MMD -MP
+
+# -------------  COMMANDS ------------- #
+
+RM				=	rm -rf
 
 # ====================== RULES ====================== #
 
 .PHONY: all re clean fclean FORCE
 
-# ---- Compiled rules ---- #
-all:			${NAME}
+# ---------- COMPILED RULES ----------- #
 
-${DIR_OBJS}%.o: %.c ${HEADERS} Makefile
-				@ mkdir -p ${shell dirname $@}
-				${CC} ${CFLAGS} -c $< -o $@
+-include $(DEP)
 
-${NAME}: 		${LIBFT} ${OBJS} ${HEADERS}
-				${CC} ${CFLAGS} ${OBJS} ${LIBFT} -o ${NAME}
+all:			$(NAME)
 
-${DIR_OBJS}:
-				mkdir -p ${DIR_OBJS}
+$(DIR_OBJS)%.o: %.c $(HEADERS)
+					mkdir -p $(shell dirname $@)
+				    $(CC) $(CFLAGS) $(DEP_FLAGS) -I $(DIR_HEADERS) -c $< -o $@
 
-${LIBFT}: 		FORCE
-				${MAKE} -C ${DIR_LIBFT}
+# ---------- VARIABLES RULES ---------- #
+
+$(NAME): 		$(LIBFT) $(OBJS) $(HEADERS)
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L $(DIR_LIBFT) -lft
+
+$(DIR_OBJS):
+				mkdir -p $(DIR_OBJS)
+
+$(LIBFT): 		FORCE
+				$(MAKE) -C $(DIR_LIBFT)
 
 # ---- Usual rules --- #
 clean:
-				make fclean -C ${DIR_LIBFT}
-				${RM} -rf ${DIR_OBJS}
+				$(MAKE) -C $(DIR_LIBFT) clean
+				$(RM) $(DIR_OBJS)
 
-fclean:			clean
-				${RM} ${NAME}
-				make fclean -C ${DIR_LIBFT}
+fclean: clean
+				$(RM) $(NAME)
+				make fclean -C $(DIR_LIBFT)
 
-re: 			fclean all
+re: 			fclean
+				$(MAKE) all
 
 FORCE:

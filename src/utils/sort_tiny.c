@@ -30,7 +30,7 @@ void	sort_twenty(t_node_int **a_stack, t_node_int **b_stack)
 	t_node_int	*current;
 
 	current = *a_stack;
-	while (ft_lstsize(*b_stack) < ft_lstsize(*a_stack) - 1)
+	while (ft_lstsize(*b_stack) != 2)
 	{
 		if (current->index == 0 || current->index == 1)
 			do_pb(b_stack, a_stack);
