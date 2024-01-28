@@ -4,59 +4,59 @@ project(push_swap_tester/push_swap C)
 set(CMAKE_C_STANDARD 11)
 
 include_directories(inc)
-include_directories(libft/inc)
+include_directories(lib/libft/inc)
 
 add_executable(push_swap
         inc/push_swap.h
-        libft/inc/libft.h
-        libft/src/ft_is/ft_isalnum.c
-        libft/src/ft_is/ft_isalpha.c
-        libft/src/ft_is/ft_isascii.c
-        libft/src/ft_is/ft_isdigit.c
-        libft/src/ft_is/ft_isprint.c
-        libft/src/ft_lst/ft_lstadd_back.c
-        libft/src/ft_lst/ft_lstadd_front.c
-        libft/src/ft_lst/ft_lstbeforelast.c
-        libft/src/ft_lst/ft_lstclear.c
-        libft/src/ft_lst/ft_lstdelone.c
-        libft/src/ft_lst/ft_lstiter.c
-        libft/src/ft_lst/ft_lstlast.c
-        libft/src/ft_lst/ft_lstmap.c
-        libft/src/ft_lst/ft_lstnew.c
-        libft/src/ft_lst/ft_lstsize.c
-        libft/src/ft_mem/ft_bzero.c
-        libft/src/ft_mem/ft_calloc.c
-        libft/src/ft_mem/ft_memchr.c
-        libft/src/ft_mem/ft_memcmp.c
-        libft/src/ft_mem/ft_memcpy.c
-        libft/src/ft_mem/ft_memmove.c
-        libft/src/ft_mem/ft_memset.c
-        libft/src/ft_printf/ft_printf.c
-        libft/src/ft_printf/numbers_functions.c
-        libft/src/ft_printf/strings_functions.c
-        libft/src/ft_put/ft_putchar_fd.c
-        libft/src/ft_put/ft_putendl_fd.c
-        libft/src/ft_put/ft_putnbr_fd.c
-        libft/src/ft_put/ft_putstr_fd.c
-        libft/src/ft_str/ft_split.c
-        libft/src/ft_str/ft_strchr.c
-        libft/src/ft_str/ft_strdup.c
-        libft/src/ft_str/ft_striteri.c
-        libft/src/ft_str/ft_strjoin.c
-        libft/src/ft_str/ft_strlcat.c
-        libft/src/ft_str/ft_strlcpy.c
-        libft/src/ft_str/ft_strlen.c
-        libft/src/ft_str/ft_strmapi.c
-        libft/src/ft_str/ft_strncmp.c
-        libft/src/ft_str/ft_strnstr.c
-        libft/src/ft_str/ft_strrchr.c
-        libft/src/ft_str/ft_strtrim.c
-        libft/src/ft_str/ft_substr.c
-        libft/src/ft_to/ft_atoi.c
-        libft/src/ft_to/ft_atol.c
-        libft/src/ft_to/ft_itoa.c
-        libft/src/ft_to/ft_tolower.c
-        libft/src/ft_to/ft_toupper.c
+        lib/libft/inc/libft.h
+        lib/libft/src/ft_is/ft_isalnum.c
+        lib/libft/src/ft_is/ft_isalpha.c
+        lib/libft/src/ft_is/ft_isascii.c
+        lib/libft/src/ft_is/ft_isdigit.c
+        lib/libft/src/ft_is/ft_isprint.c
+        lib/libft/src/ft_lst/ft_lstadd_back.c
+        lib/libft/src/ft_lst/ft_lstadd_front.c
+        lib/libft/src/ft_lst/ft_lstbeforelast.c
+        lib/libft/src/ft_lst/ft_lstclear.c
+        lib/libft/src/ft_lst/ft_lstdelone.c
+        lib/libft/src/ft_lst/ft_lstiter.c
+        lib/libft/src/ft_lst/ft_lstlast.c
+        lib/libft/src/ft_lst/ft_lstmap.c
+        lib/libft/src/ft_lst/ft_lstnew.c
+        lib/libft/src/ft_lst/ft_lstsize.c
+        lib/libft/src/ft_mem/ft_bzero.c
+        lib/libft/src/ft_mem/ft_calloc.c
+        lib/libft/src/ft_mem/ft_memchr.c
+        lib/libft/src/ft_mem/ft_memcmp.c
+        lib/libft/src/ft_mem/ft_memcpy.c
+        lib/libft/src/ft_mem/ft_memmove.c
+        lib/libft/src/ft_mem/ft_memset.c
+        lib/libft/src/ft_printf/ft_printf.c
+        lib/libft/src/ft_printf/numbers_functions.c
+        lib/libft/src/ft_printf/strings_functions.c
+        lib/libft/src/ft_put/ft_putchar_fd.c
+        lib/libft/src/ft_put/ft_putendl_fd.c
+        lib/libft/src/ft_put/ft_putnbr_fd.c
+        lib/libft/src/ft_put/ft_putstr_fd.c
+        lib/libft/src/ft_str/ft_split.c
+        lib/libft/src/ft_str/ft_strchr.c
+        lib/libft/src/ft_str/ft_strdup.c
+        lib/libft/src/ft_str/ft_striteri.c
+        lib/libft/src/ft_str/ft_strjoin.c
+        lib/libft/src/ft_str/ft_strlcat.c
+        lib/libft/src/ft_str/ft_strlcpy.c
+        lib/libft/src/ft_str/ft_strlen.c
+        lib/libft/src/ft_str/ft_strmapi.c
+        lib/libft/src/ft_str/ft_strncmp.c
+        lib/libft/src/ft_str/ft_strnstr.c
+        lib/libft/src/ft_str/ft_strrchr.c
+        lib/libft/src/ft_str/ft_strtrim.c
+        lib/libft/src/ft_str/ft_substr.c
+        lib/libft/src/ft_to/ft_atoi.c
+        lib/libft/src/ft_to/ft_atol.c
+        lib/libft/src/ft_to/ft_itoa.c
+        lib/libft/src/ft_to/ft_tolower.c
+        lib/libft/src/ft_to/ft_toupper.c
         src/commands/push.c
         src/commands/rev_rotate.c
         src/commands/rotate.c
@@ -67,5 +67,5 @@ add_executable(push_swap
         src/utils/sort_tiny.c
         src/utils/utils.c
         src/main.c
-        libft/src/ft_lst/ft_lst_create_and_add.c
+        lib/libft/src/ft_lst/ft_lst_create_and_add.c
         src/utils/radix.c)

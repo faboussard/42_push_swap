@@ -3,12 +3,11 @@
 # ---- Final executable ---- #
 NAME		=	push_swap
 
-LIBFT		=	libft/libft.a
-
 # ------------ DIRECTORIES ------------ #
 
 DIR_HEADERS	=	inc/
 DIR_SRCS 	=	src/
+DIR_LIB		=	lib/
 DIR_LIBFT 	=	$(addprefix $(DIR_LIB), libft/)
 DIR_OBJS 	=	.objs/
 
@@ -61,10 +60,7 @@ $(DIR_OBJS)%.o: %.c $(HEADERS)
 # ---------- VARIABLES RULES ---------- #
 
 $(NAME): 		$(LIBFT) $(OBJS) $(HEADERS)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L $(DIR_LIBFT) -lft
-
-$(DIR_OBJS):
-				mkdir -p $(DIR_OBJS)
+					$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L $(DIR_LIBFT) -lft
 
 $(LIBFT): 		FORCE
 				$(MAKE) -C $(DIR_LIBFT)

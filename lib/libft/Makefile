@@ -1,6 +1,6 @@
 NAME=libft.a
 
-SRC=src/ft_is/ft_isalnum.c\
+SRCS=src/ft_is/ft_isalnum.c\
 	    src/ft_is/ft_isalpha.c\
 	    src/ft_is/ft_isascii.c\
 	    src/ft_is/ft_isdigit.c\
@@ -50,22 +50,33 @@ SRC=src/ft_is/ft_isalnum.c\
 	    src/ft_to/ft_toupper.c\
 	    src/ft_lst/ft_lst_create_and_add.c\
 
-OBJECTS=$(SRC:.c=.o)
+DIR_INCS		=	inc/
+DIR_OBJS		=	.objs/
+OBJS			=	$(patsubst %.c, $(DIR_OBJS)%.o, $(SRCS))
+DEPS			=	$(patsubst %.c, $(DIR_OBJS)%.d, $(SRCS))
+DEPS_FLAGS		=	-MMD -MP
+CFLAGS			=	-Wall -Wextra -Werror
+RM				=	rm -rf
+AR				= 	ar rcs
+
+all : $(NAME)
+
+$(NAME) : $(OBJS)
+		$(AR) $(NAME) $(OBJS)
+
+clean :
+		$(RM) $(DIR_OBJS)
+
+fclean : clean
+		$(RM) $(NAME)
+
+re : fclean
+	$(MAKE) all
+
+-include $(DEPS)
+
+$(DIR_OBJS)%.o : %.c
+		mkdir -p $(shell dirname $@)
+		$(CC) $(CFLAGS) $(DEPS_FLAGS) -I $(DIR_INCS) -c $< -o $@
 
 .PHONY: all clean fclean re
-
-all: $(NAME)
-
-$(NAME): $(OBJECTS)
-	ar -rc $(NAME) $(OBJECTS)
-
-%.o: %.c  libft.h
-	cc -Wall -Wextra -Werror -c $<
-
-clean:
-	rm -f $(OBJECTS)
-
-fclean: clean
-	rm -f $(NAME)
-
-re: fclean all

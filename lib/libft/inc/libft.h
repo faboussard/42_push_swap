@@ -88,7 +88,6 @@ t_node_int				*ft_lstmap(t_node_int *lst, int (*f)(int),
 void					ft_putchar_fd(char c, int fd);
 char					**ft_split(char const *s, char c);
 int						ft_printf(const char *s, ...);
-size_t					ft_strlen(const char *string);
 int						ft_putchar(int c);
 int						ft_putstr(char *s);
 int						ft_print_and_count_int(int n, const char *base);
