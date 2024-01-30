@@ -6,7 +6,7 @@
 /*   By: faboussa  <faboussa@student.42lyon.f>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:16:47 by faboussa          #+#    #+#             */
-/*   Updated: 2024/01/22 18:00:56 by faboussa         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:37:30 by faboussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int ac, char **av)
 	if ((is_stack_sorted(a_stack)) == OK)
 		return (ft_lstclear(&a_stack), 0);
 	init_index(&a_stack);
-	if (ac == 4)
+	ac = ft_lstsize(a_stack);
+	if (ac < 4)
 		sort_3_elements(&a_stack);
 	else if (ac < 20)
 		sort_twenty(&a_stack, &b_stack);

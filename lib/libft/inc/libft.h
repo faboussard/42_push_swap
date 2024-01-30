@@ -28,7 +28,6 @@ typedef struct s_node_int
 	int					content;
 	int					index;
 	struct s_node_int	*next;
-	struct s_node_int	*prev;
 }						t_node_int;
 
 typedef struct s_node

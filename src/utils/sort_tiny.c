@@ -6,7 +6,7 @@
 /*   By: faboussa <faboussa@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 12:03:50 by faboussa          #+#    #+#             */
-/*   Updated: 2024/01/24 12:03:50 by faboussa         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:39:34 by faboussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	sort_twenty(t_node_int **a_stack, t_node_int **b_stack)
 	current = *a_stack;
 	while (ft_lstsize(*b_stack) != 2)
 	{
-		if (current->index == 0 || current->index == 1)
+		if (current->content == 0 || current->content == 1
+			|| current->content == 2)
 			do_pb(b_stack, a_stack);
 		else
 			do_ra(a_stack);
@@ -40,9 +41,9 @@ void	sort_twenty(t_node_int **a_stack, t_node_int **b_stack)
 	}
 	while (!is_stack_sorted(*a_stack))
 	{
-		if (ft_lstsize(*b_stack) > 0 && (*b_stack)->index == 0)
+		if (ft_lstsize(*b_stack) > 0 && (*b_stack)->content == 0)
 			do_sb(b_stack);
-		if ((*a_stack)->index != find_min(*a_stack))
+		if ((*a_stack)->content != find_min(*a_stack))
 			do_rra(a_stack);
 		else
 			do_pb(b_stack, a_stack);

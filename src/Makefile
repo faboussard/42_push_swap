@@ -67,11 +67,12 @@ $(LIBFT): 		FORCE
 
 # ---- Usual rules --- #
 clean:
-				$(MAKE) -C $(DIR_LIBFT) fclean
+				$(MAKE) -C $(DIR_LIBFT) clean
 				$(RM) $(DIR_OBJS)
 
-fclean:			clean
+fclean: clean
 				$(RM) $(NAME)
+				make fclean -C $(DIR_LIBFT)
 
 re: 			fclean
 				$(MAKE) all

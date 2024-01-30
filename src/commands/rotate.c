@@ -15,15 +15,19 @@
 void	rotate_one(t_node_int **head)
 {
 	t_node_int	*is_last;
+	t_node_int	*new_last;
+	t_node_int	*new_first;
 
-	if (!head || !*head || !(*head)->next)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return ;
 	is_last = ft_lstlast(*head);
-	is_last->next = *head;
-	(*head) = (*head)->next;
-	(*head)->prev = NULL;
-	is_last->next->prev = is_last;
-	is_last->next->next = NULL;
+	if (*head == is_last)
+		return ;
+	new_last = *head;
+	is_last->next = new_last;
+	new_first = (*head)->next;
+	new_last->next = NULL;
+	(*head) = new_first;
 }
 
 void	do_ra(t_node_int **head)

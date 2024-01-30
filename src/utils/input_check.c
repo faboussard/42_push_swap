@@ -76,33 +76,3 @@ int	check_errors_and_init_stack(t_node_int **a, char **av, int ac)
 		return (NOK);
 	return (OK);
 }
-
-/*
-int	check_errors_and_init_stack(t_node_int **a, char **av, int ac)
-{
-	int		i;
-	int		j;
-	char	**split;
-
-	i = 0;
-	while (++i < ac)
-	{
-		j = -1;
-		split = ft_split(av[i], ' ');
-		if (split == NULL)
-			return (0);
-		while (split[++j])
-		{
-			if ((ft_atol(split[j]) > INT_MAX || ft_atol(split[j]) < INT_MIN)
-				|| (syntax(split[j]) == 0)
-				|| (error_duplicate(*a, (int)(ft_atol(split[j]))) == 0)
-				|| (create_and_add(split[j], a) == 0))
-				return (ft_lstclear(a), NOK);
-		}
-		free_split(split);
-	}
-	if (*a == NULL)
-		return (NOK);
-	return (OK);
-}
-*/
